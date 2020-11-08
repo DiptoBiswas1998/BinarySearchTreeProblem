@@ -8,6 +8,9 @@ namespace BSTProblem
         T NodeData;
         public BinarySearchTree<T> leftTree { get; set; }
         public BinarySearchTree<T> rightTree { get; set; }
+        bool result = false;
+        int leftCount = 0;
+        int rightCount = 0;
         public BinarySearchTree(T NodeData)
         {
             this.NodeData = NodeData;
@@ -36,13 +39,19 @@ namespace BSTProblem
         {
             if (this.leftTree != null)
             {
+                this.leftCount++;
                 this.leftTree.Display();
             }
             Console.WriteLine(this.NodeData.ToString());
             if (this.rightTree != null)
             {
+                this.rightCount++;
                 this.rightTree.Display();
             }
+        }
+        public void Size()
+        {
+            Console.WriteLine("Size of BST = " + (1 + leftCount + rightCount));
         }
     }
 }
