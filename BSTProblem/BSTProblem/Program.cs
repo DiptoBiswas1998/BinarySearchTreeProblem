@@ -22,6 +22,7 @@ namespace BSTProblem
             Console.WriteLine("Binary Search Tree: ");
             binarySearchTree.Display();
             binarySearchTree.Size();
+            bool searchElement = binarySearchTree.SearchElement(63, binarySearchTree);
         }
     }
 }

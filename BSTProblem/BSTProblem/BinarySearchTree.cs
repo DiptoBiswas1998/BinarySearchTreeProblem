@@ -53,5 +53,22 @@ namespace BSTProblem
         {
             Console.WriteLine("Size of BST = " + (1 + leftCount + rightCount));
         }
+        public bool SearchElement(T element, BinarySearchTree<T> node)
+        {
+            if (node == null)
+                return false;
+            if (node.NodeData.Equals(element))
+            {
+                Console.WriteLine("Found element " + node.NodeData + " in BST");
+                return true;
+            }
+            else
+                Console.WriteLine("Current element found in BST = {0}", node.NodeData);
+            if (element.CompareTo(node.NodeData) < 0)
+                SearchElement(element, node.leftTree);
+            if (element.CompareTo(node.NodeData) > 0)
+                SearchElement(element, node.rightTree);
+            return result;
+        }
     }
 }
